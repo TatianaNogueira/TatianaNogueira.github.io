@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dra. Tati Mayumi - Estética Avançada</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap");
+
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: "Playfair Display", serif;
+      }
+
+      .rose-gold {
+        color: #b76e79;
+      }
+
+      .rose-gold-bg {
+        background-color: #b76e79;
+      }
+
+      .soft-pink-bg {
+        background-color: #fff5f7;
+      }
+
+      .hover-rose:hover {
+        background-color: #a35d68;
+      }
+
+      .hover-lift {
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      .hover-lift:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(183, 110, 121, 0.2);
+      }
+
+      .elegant-border {
+        border: 1px solid rgba(183, 110, 121, 0.3);
+      }
+
+      .decorative-line {
+        width: 80px;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #b76e79, transparent);
+      }
+
+      /* Gallery Styles */
+      .gallery-container {
+        display: grid;
+        gap: 1.5rem;
+      }
+
+      @media (min-width: 768px) {
+        .gallery-container {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      .before-after-card {
+        position: relative;
+        overflow: hidden;
+        border-radius: 1rem;
+        background: white;
+      }
+
+      .image-comparison {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 3/4;
+        overflow: hidden;
+      }
+
+      .comparison-images {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2px;
+        height: 100%;
+      }
+
+      .comparison-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .comparison-label {
+        position: absolute;
+        top: 1rem;
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+        font-weight: 500;
+        letter-spacing: 0.05em;
+      }
+
+      .label-before {
+        left: 1rem;
+      }
+
+      .label-after {
+        right: 1rem;
+      }
+    </style>
+  </head>
+  <body class="bg-white text-gray-800">
+    <!-- Header/Navigation -->
+    <header class="fixed w-full top-0 z-50 bg-white shadow-sm">
+      <nav class="container mx-auto px-4 sm:px-6 py-4">
+        <div class="flex justify-between items-center">
+          <div class="text-xl sm:text-2xl font-bold rose-gold">
+            Dra. Tati Mayumi
+          </div>
+          <div
+            class="hidden md:flex space-x-6 lg:space-x-8 items-center text-sm lg:text-base"
+          >
+            <a href="#inicio" class="text-gray-700 hover:rose-gold transition"
+              >Início</a
+            >
+            <a href="#servicos" class="text-gray-700 hover:rose-gold transition"
+              >Serviços</a
+            >
+            <a
+              href="#portfolio"
+              class="text-gray-700 hover:rose-gold transition"
+              >Portfólio</a
+            >
+            <a href="#sobre" class="text-gray-700 hover:rose-gold transition"
+              >Sobre</a
+            >
+            <a href="#contato" class="text-gray-700 hover:rose-gold transition"
+              >Contato</a
+            >
+            <a
+              href="https://wa.me/5511976713350?text=Olá! Gostaria de agendar um horário."
+              class="rose-gold-bg text-white px-5 py-2 rounded-full hover-rose transition text-sm lg:text-base"
+            >
+              Agende já
+            </a>
+          </div>
+          <button class="md:hidden rose-gold" onclick="toggleMenu()">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4 space-y-3">
+          <a
+            href="#inicio"
+            class="block text-gray-700 hover:rose-gold transition"
+            >Início</a
+          >
+          <a
+            href="#servicos"
+            class="block text-gray-700 hover:rose-gold transition"
+            >Serviços</a
+          >
+          <a
+            href="#portfolio"
+            class="block text-gray-700 hover:rose-gold transition"
+            >Portfólio</a
+          >
+          <a
+            href="#sobre"
+            class="block text-gray-700 hover:rose-gold transition"
+            >Sobre</a
+          >
+          <a
+            href="#contato"
+            class="block text-gray-700 hover:rose-gold transition"
+            >Contato</a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <!-- Trigger deploy -->
+    <section id="inicio" class="pt-28 sm:pt-32 pb-16 sm:pb-20 soft-pink-bg">
+      <!-- Deployment Trigger -->
+      <div class="container mx-auto px-4 sm:px-6 py-12 sm:py-20">
+        <div class="max-w-4xl mx-auto text-center">
+          <img
+            src="assets/logo-bigger-no-text-transparent-removebg-preview.png"
+            alt="Dra. Tati Mayumi Logo"
+            class="mx-auto mb-8 w-56"
+          />
+          <div class="decorative-line mx-auto mb-6"></div>
+          <h1
+            class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 text-gray-800 leading-tight"
+          >
+            Dra. Tati Mayumi
+          </h1>
+          <p
+            class="rose-gold text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 tracking-wide"
+          >
+            Estética Avançada
+          </p>
+          <p
+            class="text-lg sm:text-xl md:text-2xl mb-8 sm:mb-12 text-gray-600 max-w-2xl mx-auto leading-relaxed px-4"
+          >
+            Realce sua beleza natural com procedimentos personalizados e
+            resultados harmoniosos
+          </p>
+          <a
+            href="https://wa.me/5511976713350?text=Olá! Gostaria de agendar um horário."
+            class="inline-block rose-gold-bg text-white px-8 sm:px-12 py-3 sm:py-4 rounded-full hover-rose transition text-base sm:text-lg"
+          >
+            Agendar Consulta
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Serviços -->
+    <section
+      id="servicos"
+      class="pt-28 sm:pt-32 py-16 sm:py-20 md:py-24 bg-white"
+    >
+      <div class="container mx-auto px-4 sm:px-6">
+        <div class="text-center mb-12 sm:mb-16 md:mb-20">
+          <div class="decorative-line mx-auto mb-4 sm:mb-6"></div>
+          <h2
+            class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-3 sm:mb-4"
+          >
+            Serviços
+          </h2>
+          <p class="text-gray-600 text-base sm:text-lg">
+            Procedimentos de excelência
+          </p>
+        </div>
+
+        <div
+          class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10 max-w-6xl mx-auto"
+        >
+          <!-- Botox -->
+          <div
+            class="bg-white elegant-border rounded-2xl p-6 sm:p-8 md:p-10 hover-lift"
+          >
+            <div
+              class="w-14 h-14 sm:w-16 sm:h-16 rounded-full rose-gold-bg bg-opacity-10 flex items-center justify-center mb-5 sm:mb-6 mx-auto"
+            >
+              <svg
+                class="w-7 h-7 sm:w-8 sm:h-8 rose-gold"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                ></path>
+              </svg>
+            </div>
+            <h3
+              class="text-2xl sm:text-3xl font-semibold text-center text-gray-800 mb-3 sm:mb-4"
+            >
+              Botox
+            </h3>
+            <div class="decorative-line mx-auto mb-4 sm:mb-6"></div>
+            <p
+              class="text-gray-600 mb-5 sm:mb-6 text-center leading-relaxed text-sm sm:text-base"
+            >
+              Suavização de rugas e linhas de expressão com resultados naturais
+              e harmoniosos.
+            </p>
+            <ul
+              class="text-gray-600 space-y-2 sm:space-y-3 text-sm sm:text-base"
+            >
+              <li class="flex items-center justify-center">
+                <span class="rose-gold mr-2">✓</span> Resultados em até 14 dias
+              </li>
+              <li class="flex items-center justify-center">
+                <span class="rose-gold mr-2">✓</span> Duração de 4-6 meses
+              </li>
+              <li class="flex items-center justify-center">
+                <span class="rose-gold mr-2">✓</span> Procedimento seguro
+              </li>
+            </ul>
+          </div>
+
+          <!-- Preenchimento Labial -->
+          <div
+            class="bg-white elegant-border rounded-2xl p-6 sm:p-8 md:p-10 hover-lift"
+          >
+            <div
+              class="w-14 h-14 sm:w-16 sm:h-16 rounded-full rose-gold-bg bg-opacity-10 flex items-center justify-center mb-5 sm:mb-6 mx-auto"
+            >
+              <svg
+                class="w-7 h-7 sm:w-8 sm:h-8 rose-gold"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                ></path>
+              </svg>
+            </div>
+            <h3
+              class="text-2xl sm:text-3xl font-semibold text-center text-gray-800 mb-3 sm:mb-4"
+            >
+              Preenchimento Labial
+            </h3>
+            <div class="decorative-line mx-auto mb-4 sm:mb-6"></div>
+            <p
+              class="text-gray-600 mb-5 sm:mb-6 text-center leading-relaxed text-sm sm:text-base"
+            >
+              Aumento e modelagem dos lábios com ácido hialurônico para volume e
+              definição natural.
+            </p>
+            <ul
+              class="text-gray-600 space-y-2 sm:space-y-3 text-sm sm:text-base"
+            >
+              <li class="flex items-center justify-center">
+                <span class="rose-gold mr-2">✓</span> Resultado imediato
+              </li>
+              <li class="flex items-center justify-center">
+                <span class="rose-gold mr-2">✓</span> Aparência natural
+              </li>
+              <li class="flex items-center justify-center">
+                <span class="rose-gold mr-2">✓</span> Reversível e seguro
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfólio -->
+    <section
+      id="portfolio"
+      class="pt-28 sm:pt-32 py-16 sm:py-20 md:py-24 soft-pink-bg"
+    >
+      <div class="container mx-auto px-4 sm:px-6">
+        <div class="text-center mb-12 sm:mb-16 md:mb-20">
+          <div class="decorative-line mx-auto mb-4 sm:mb-6"></div>
+          <h2
+            class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-3 sm:mb-4"
+          >
+            Portfólio
+          </h2>
+          <p class="text-gray-600 text-base sm:text-lg">
+            Resultados que falam por si
+          </p>
+        </div>
+
+        <div class="gallery-container max-w-5xl mx-auto">
+          <!-- Before/After 1 -->
+          <div class="before-after-card elegant-border hover-lift">
+            <div class="image-comparison">
+              <div class="comparison-images">
+                <img
+                  src="assets/preenchimento-labial-antes.jpeg"
+                  alt="Antes do procedimento"
+                  class="comparison-image"
+                />
+                <img
+                  src="assets/preenchimento-labial-depois.jpeg"
+                  alt="Depois do procedimento"
+                  class="comparison-image"
+                />
+              </div>
+              <span class="comparison-label label-before">ANTES</span>
+              <span class="comparison-label label-after">DEPOIS</span>
+            </div>
+            <div class="p-4 sm:p-6">
+              <h3
+                class="text-lg sm:text-xl font-semibold text-gray-800 mb-2 text-center"
+              >
+                Preenchimento Labial
+              </h3>
+              <p class="text-gray-600 text-center text-sm sm:text-base">
+                Resultado natural com volume equilibrado
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-10 sm:mt-12">
+          <p class="text-gray-600 mb-6 sm:mb-8 text-sm sm:text-base px-4">
+            *Resultados podem variar de acordo com cada pessoa
+          </p>
+          <a
+            href="https://wa.me/5511976713350?text=Olá! Gostaria de agendar um horário."
+            class="inline-block rose-gold-bg text-white px-8 sm:px-10 py-3 sm:py-4 rounded-full hover-rose transition text-sm sm:text-base"
+          >
+            Quero meu resultado
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sobre -->
+    <section id="sobre" class="pt-28 sm:pt-32 py-16 sm:py-20 md:py-24 bg-white">
+      <div class="container mx-auto px-4 sm:px-6">
+        <div class="max-w-5xl mx-auto">
+          <div class="text-center mb-12 sm:mb-16">
+            <div class="decorative-line mx-auto mb-4 sm:mb-6"></div>
+            <h2
+              class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-4 sm:mb-6"
+            >
+              Por que nos escolher?
+            </h2>
+            <p
+              class="text-gray-600 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto px-4"
+            >
+              Combinamos experiência, técnica apurada e um olhar artístico para
+              realçar sua beleza natural. Cada procedimento é planejado
+              individualmente, respeitando suas características únicas e
+              objetivos pessoais.
+            </p>
+          </div>
+
+          <div
+            class="grid sm:grid-cols-2 lg:grid-cols-2 gap-6 sm:gap-8 mt-12 sm:mt-16"
+          >
+            <div
+              class="text-center elegant-border rounded-2xl p-6 sm:p-8 soft-pink-bg"
+            >
+              <div class="text-4xl sm:text-5xl font-bold rose-gold mb-3">
+                9+
+              </div>
+              <div class="decorative-line mx-auto mb-3"></div>
+              <p class="text-gray-600 tracking-wide text-sm sm:text-base">
+                Anos de Experiência na Área da Saúde
+              </p>
+            </div>
+            <!-- <div -->
+            <!--   class="text-center elegant-border rounded-2xl p-6 sm:p-8 soft-pink-bg" -->
+            <!-- > -->
+            <!--   <div class="text-4xl sm:text-5xl font-bold rose-gold mb-3"> -->
+            <!--     1000+ -->
+            <!--   </div> -->
+            <!--   <div class="decorative-line mx-auto mb-3"></div> -->
+            <!--   <p class="text-gray-600 tracking-wide text-sm sm:text-base"> -->
+            <!--     Clientes Satisfeitos -->
+            <!--   </p> -->
+            <!-- </div> -->
+            <div
+              class="text-center elegant-border rounded-2xl p-6 sm:p-8 soft-pink-bg sm:col-span-2 lg:col-span-1"
+            >
+              <div class="text-4xl sm:text-5xl font-bold rose-gold mb-3">
+                100%
+              </div>
+              <div class="decorative-line mx-auto mb-3"></div>
+              <p class="text-gray-600 tracking-wide text-sm sm:text-base">
+                Segurança e Qualidade
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="contato"
+      class="pt-28 sm:pt-32 py-16 sm:py-20 md:py-24 bg-white text-center"
+    >
+      <div class="container mx-auto px-4 sm:px-6">
+        <div class="max-w-2xl mx-auto">
+          <div class="decorative-line mx-auto mb-4 sm:mb-6"></div>
+          <h2
+            class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-4 sm:mb-6"
+          >
+            Entre em Contato
+          </h2>
+          <p class="text-gray-600 text-lg sm:text-xl mb-8 sm:mb-10">
+            Estamos prontas para te atender! Fale conosco diretamente pelo
+            WhatsApp para agendar sua consulta ou tirar suas dúvidas.
+          </p>
+          <a
+            href="https://wa.me/5511976713350?text=Olá! Gostaria de agendar um horário."
+            class="inline-block rose-gold-bg text-white px-8 sm:px-12 py-3 sm:py-4 rounded-full hover-rose transition text-base sm:text-lg"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Fale Conosco pelo WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white py-6 sm:py-8">
+      <div
+        class="container mx-auto px-4 sm:px-6 text-center text-gray-500 text-sm sm:text-base"
+      >
+        <p>&copy; 2025 Dra. Tati Mayumi. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a
+      href="https://wa.me/5511976713350?text=Olá! Gostaria de agendar um horário."
+      id="whatsapp-button"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img
+        src="https://framerusercontent.com/images/I5JycHzDls9fs2r5fGWTaliP6Q.png?width=512&height=512"
+        class="w-8 h-8"
+      />
+    </a>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
