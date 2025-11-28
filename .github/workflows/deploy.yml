@@ -26,6 +26,29 @@ jobs:
           echo "================================================"
           echo "  Iniciando deploy via FTP"
           echo "================================================"
+
+          # Validar variáveis obrigatórias
+          if [ -z "$FTP_SERVER" ]; then
+            echo "❌ ERRO: FTP_SERVER não está configurado nos secrets!"
+            exit 1
+          fi
+
+          if [ -z "$FTP_USERNAME" ]; then
+            echo "❌ ERRO: FTP_USERNAME não está configurado nos secrets!"
+            exit 1
+          fi
+
+          if [ -z "$FTP_PASSWORD" ]; then
+            echo "❌ ERRO: FTP_PASSWORD não está configurado nos secrets!"
+            exit 1
+          fi
+
+          # Definir valor padrão para FTP_REMOTE_PATH se estiver vazio
+          if [ -z "$FTP_REMOTE_PATH" ]; then
+            FTP_REMOTE_PATH="domains/dratatimayumi.com.br/public_html/"
+            echo "⚠️  FTP_REMOTE_PATH não configurado, usando padrão: $FTP_REMOTE_PATH"
+          fi
+
           echo "Servidor: $FTP_SERVER"
           echo "Usuário: $FTP_USERNAME"
           echo "Caminho remoto: $FTP_REMOTE_PATH"
@@ -33,6 +56,7 @@ jobs:
 
           lftp -d -u "$FTP_USERNAME,$FTP_PASSWORD" -p 21 ftp://"$FTP_SERVER" <<EOF
           set debug 10
+          set dns:order "inet"
           set ssl:verify-certificate no
           set ftp:ssl-allow no
           set net:timeout 10
@@ -61,4 +85,3 @@ jobs:
             echo "================================================"
             exit 1
           fi
-
