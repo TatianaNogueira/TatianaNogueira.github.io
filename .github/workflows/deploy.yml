@@ -31,7 +31,8 @@ jobs:
           echo "Caminho remoto: $FTP_REMOTE_PATH"
           echo ""
 
-          lftp -u "$FTP_USERNAME,$FTP_PASSWORD" -p 21 ftp://"$FTP_SERVER" <<EOF
+          lftp -d -u "$FTP_USERNAME,$FTP_PASSWORD" -p 21 ftp://"$FTP_SERVER" <<EOF
+          set debug 10
           set ssl:verify-certificate no
           set ftp:ssl-allow no
           set net:timeout 10
