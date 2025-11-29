@@ -70,7 +70,18 @@ jobs:
           set net:reconnect-interval-base 5
           set ftp:passive-mode on
           open -u $FTP_USERNAME,$FTP_PASSWORD -p 21 ftp://$FTP_SERVER
-          mirror -R --delete --verbose --parallel=3 ./ $FTP_REMOTE_PATH
+          mirror -R --delete --verbose --parallel=3 \
+            --exclude-glob .git/ \
+            --exclude-glob .github/ \
+            --exclude-glob .gitignore \
+            --exclude-glob '*.md' \
+            --exclude-glob README* \
+            --exclude-glob LICENSE \
+            --exclude-glob '*.sh' \
+            --exclude-glob .vscode/ \
+            --exclude-glob .idea/ \
+            --exclude-glob node_modules/ \
+            ./ $FTP_REMOTE_PATH
           quit
           "
 
