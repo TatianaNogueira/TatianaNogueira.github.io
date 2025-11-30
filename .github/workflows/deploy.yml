@@ -76,6 +76,7 @@ jobs:
             --exclude-glob .gitignore \
             --exclude-glob '*.md' \
             --exclude-glob README* \
+            --exclude-glob CNAME \
             --exclude-glob LICENSE \
             --exclude-glob '*.sh' \
             --exclude-glob .vscode/ \
