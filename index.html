@@ -166,6 +166,22 @@
       #whatsapp-button:hover {
         transform: scale(1.1);
       }
+
+      /* FAQ Accordion Styles */
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+      }
+
+      .faq-icon {
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .faq-question:focus {
+        outline: 2px solid #b76e79;
+        outline-offset: 2px;
+      }
     </style>
   </head>
   <body class="bg-white text-gray-800">
@@ -192,6 +208,9 @@
             >
             <a href="#sobre" class="text-gray-700 hover:rose-gold transition"
               >Sobre</a
+            >
+            <a href="#faq" class="text-gray-700 hover:rose-gold transition"
+              >FAQ</a
             >
             <a href="#contato" class="text-gray-700 hover:rose-gold transition"
               >Contato</a
@@ -240,6 +259,11 @@
             href="#sobre"
             class="block text-gray-700 hover:rose-gold transition"
             >Sobre</a
+          >
+          <a
+            href="#faq"
+            class="block text-gray-700 hover:rose-gold transition"
+            >FAQ</a
           >
           <a
             href="#contato"
@@ -611,6 +635,295 @@
       </div>
     </section>
 
+    <!-- FAQ (Perguntas Frequentes) -->
+    <section id="faq" class="pt-28 sm:pt-32 py-16 sm:py-20 md:py-24 soft-pink-bg">
+      <div class="container mx-auto px-4 sm:px-6">
+        <div class="max-w-4xl mx-auto">
+          <!-- Cabeçalho da Seção -->
+          <div class="text-center mb-12 sm:mb-16">
+            <div class="decorative-line mx-auto mb-4 sm:mb-6"></div>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-4 sm:mb-6">
+              Perguntas Frequentes
+            </h2>
+            <p class="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto">
+              Tire suas dúvidas sobre Botox e Preenchimento Labial. Se precisar de mais informações, estamos à disposição!
+            </p>
+          </div>
+
+          <!-- Seção Botox -->
+          <div class="mb-12 sm:mb-16">
+            <div class="flex items-center justify-center mb-6 sm:mb-8">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full rose-gold-bg flex items-center justify-center mr-3">
+                <svg class="w-6 h-6 sm:w-7 sm:h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+              </div>
+              <h3 class="text-2xl sm:text-3xl md:text-4xl font-semibold rose-gold">Botox</h3>
+            </div>
+
+            <div class="space-y-4">
+              <!-- Pergunta 1 -->
+              <div class="faq-item bg-white elegant-border rounded-xl overflow-hidden">
+                <button class="faq-question w-full text-left p-5 sm:p-6 flex justify-between items-start gap-4 hover:bg-gray-50 transition" onclick="toggleFAQ(this)">
+                  <span class="text-base sm:text-lg font-semibold text-gray-800 pr-4">O que é Botox e para que serve?</span>
+                  <svg class="faq-icon w-5 h-5 sm:w-6 sm:h-6 rose-gold flex-shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </button>
+                <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+                  <div class="p-5 sm:p-6 pt-0 text-gray-600 text-sm sm:text-base leading-relaxed">
+                    O Botox (toxina botulínica) é um tratamento estético que relaxa temporariamente os músculos faciais, suavizando rugas e linhas de expressão. É especialmente eficaz para tratar rugas na testa, entre as sobrancelhas (glabela), ao redor dos olhos (pés de galinha) e para sorriso gengival.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Pergunta 2 -->
+              <div class="faq-item bg-white elegant-border rounded-xl overflow-hidden">
+                <button class="faq-question w-full text-left p-5 sm:p-6 flex justify-between items-start gap-4 hover:bg-gray-50 transition" onclick="toggleFAQ(this)">
+                  <span class="text-base sm:text-lg font-semibold text-gray-800 pr-4">Quanto custa o tratamento com Botox?</span>
+                  <svg class="faq-icon w-5 h-5 sm:w-6 sm:h-6 rose-gold flex-shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </button>
+                <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+                  <div class="p-5 sm:p-6 pt-0 text-gray-600 text-sm sm:text-base leading-relaxed">
+                    O valor do Botox varia conforme a área tratada e a quantidade de unidades necessárias. Em média, o investimento fica entre R$ 800 e R$ 2.500 por sessão. Durante a consulta, é feita uma avaliação personalizada para determinar o valor exato do seu tratamento.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Pergunta 3 -->
+              <div class="faq-item bg-white elegant-border rounded-xl overflow-hidden">
+                <button class="faq-question w-full text-left p-5 sm:p-6 flex justify-between items-start gap-4 hover:bg-gray-50 transition" onclick="toggleFAQ(this)">
+                  <span class="text-base sm:text-lg font-semibold text-gray-800 pr-4">Quanto tempo dura o efeito do Botox?</span>
+                  <svg class="faq-icon w-5 h-5 sm:w-6 sm:h-6 rose-gold flex-shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </button>
+                <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+                  <div class="p-5 sm:p-6 pt-0 text-gray-600 text-sm sm:text-base leading-relaxed">
+                    O efeito do Botox dura em média 4 a 6 meses. Após esse período, o movimento muscular retorna gradualmente e uma nova aplicação pode ser necessária para manter os resultados. Com aplicações regulares, muitos pacientes relatam que o efeito pode durar um pouco mais.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Pergunta 4 -->
+              <div class="faq-item bg-white elegant-border rounded-xl overflow-hidden">
+                <button class="faq-question w-full text-left p-5 sm:p-6 flex justify-between items-start gap-4 hover:bg-gray-50 transition" onclick="toggleFAQ(this)">
+                  <span class="text-base sm:text-lg font-semibold text-gray-800 pr-4">A aplicação de Botox dói?</span>
+                  <svg class="faq-icon w-5 h-5 sm:w-6 sm:h-6 rose-gold flex-shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </button>
+                <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+                  <div class="p-5 sm:p-6 pt-0 text-gray-600 text-sm sm:text-base leading-relaxed">
+                    A aplicação é feita com agulhas muito finas e o desconforto é mínimo, descrito pela maioria dos pacientes como uma leve picada ou pressão. O procedimento dura cerca de 10 a 20 minutos e não requer anestesia. Se necessário, pode ser aplicado um creme anestésico antes do procedimento.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Pergunta 5 -->
+              <div class="faq-item bg-white elegant-border rounded-xl overflow-hidden">
+                <button class="faq-question w-full text-left p-5 sm:p-6 flex justify-between items-start gap-4 hover:bg-gray-50 transition" onclick="toggleFAQ(this)">
+                  <span class="text-base sm:text-lg font-semibold text-gray-800 pr-4">Quando vejo os resultados do Botox?</span>
+                  <svg class="faq-icon w-5 h-5 sm:w-6 sm:h-6 rose-gold flex-shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </button>
+                <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+                  <div class="p-5 sm:p-6 pt-0 text-gray-600 text-sm sm:text-base leading-relaxed">
+                    Os primeiros resultados aparecem entre 3 a 5 dias após a aplicação, mas o efeito completo é visível em 14 dias. É importante não deitar ou fazer exercícios físicos intensos nas primeiras 4 horas após o procedimento.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Pergunta 6 -->
+              <div class="faq-item bg-white elegant-border rounded-xl overflow-hidden">
+                <button class="faq-question w-full text-left p-5 sm:p-6 flex justify-between items-start gap-4 hover:bg-gray-50 transition" onclick="toggleFAQ(this)">
+                  <span class="text-base sm:text-lg font-semibold text-gray-800 pr-4">Quais são as contraindicações do Botox?</span>
+                  <svg class="faq-icon w-5 h-5 sm:w-6 sm:h-6 rose-gold flex-shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </button>
+                <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+                  <div class="p-5 sm:p-6 pt-0 text-gray-600 text-sm sm:text-base leading-relaxed">
+                    O Botox é contraindicado para gestantes, lactantes, pessoas com doenças neuromusculares (como miastenia gravis) e alergia a algum componente da fórmula. Durante a consulta, é feita uma avaliação completa do seu histórico de saúde para garantir a segurança do procedimento.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Pergunta 7 -->
+              <div class="faq-item bg-white elegant-border rounded-xl overflow-hidden">
+                <button class="faq-question w-full text-left p-5 sm:p-6 flex justify-between items-start gap-4 hover:bg-gray-50 transition" onclick="toggleFAQ(this)">
+                  <span class="text-base sm:text-lg font-semibold text-gray-800 pr-4">Botox deixa o rosto "congelado" ou artificial?</span>
+                  <svg class="faq-icon w-5 h-5 sm:w-6 sm:h-6 rose-gold flex-shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </button>
+                <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+                  <div class="p-5 sm:p-6 pt-0 text-gray-600 text-sm sm:text-base leading-relaxed">
+                    Quando aplicado corretamente por um profissional qualificado, o Botox proporciona resultados naturais. O objetivo é suavizar as linhas de expressão mantendo a capacidade de expressão facial. O aspecto "congelado" geralmente ocorre quando há excesso na aplicação.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Seção Preenchimento Labial -->
+          <div class="mb-12 sm:mb-16">
+            <div class="flex items-center justify-center mb-6 sm:mb-8">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full rose-gold-bg flex items-center justify-center mr-3">
+                <svg class="w-6 h-6 sm:w-7 sm:h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                </svg>
+              </div>
+              <h3 class="text-2xl sm:text-3xl md:text-4xl font-semibold rose-gold">Preenchimento Labial</h3>
+            </div>
+
+            <div class="space-y-4">
+              <!-- Pergunta 1 -->
+              <div class="faq-item bg-white elegant-border rounded-xl overflow-hidden">
+                <button class="faq-question w-full text-left p-5 sm:p-6 flex justify-between items-start gap-4 hover:bg-gray-50 transition" onclick="toggleFAQ(this)">
+                  <span class="text-base sm:text-lg font-semibold text-gray-800 pr-4">O que é preenchimento labial e como funciona?</span>
+                  <svg class="faq-icon w-5 h-5 sm:w-6 sm:h-6 rose-gold flex-shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </button>
+                <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+                  <div class="p-5 sm:p-6 pt-0 text-gray-600 text-sm sm:text-base leading-relaxed">
+                    O preenchimento labial é um procedimento estético que utiliza ácido hialurônico para aumentar o volume dos lábios, melhorar o contorno e reduzir linhas finas ao redor da boca. O ácido hialurônico é uma substância naturalmente presente no corpo, o que torna o procedimento seguro e com baixo risco de rejeição.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Pergunta 2 -->
+              <div class="faq-item bg-white elegant-border rounded-xl overflow-hidden">
+                <button class="faq-question w-full text-left p-5 sm:p-6 flex justify-between items-start gap-4 hover:bg-gray-50 transition" onclick="toggleFAQ(this)">
+                  <span class="text-base sm:text-lg font-semibold text-gray-800 pr-4">Quanto custa o preenchimento labial?</span>
+                  <svg class="faq-icon w-5 h-5 sm:w-6 sm:h-6 rose-gold flex-shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </button>
+                <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+                  <div class="p-5 sm:p-6 pt-0 text-gray-600 text-sm sm:text-base leading-relaxed">
+                    O valor do preenchimento labial varia conforme a quantidade de produto utilizado e o resultado desejado. O investimento geralmente fica a partir de R$ 1.200 por aplicação. O preço final é definido após avaliação individual na consulta.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Pergunta 3 -->
+              <div class="faq-item bg-white elegant-border rounded-xl overflow-hidden">
+                <button class="faq-question w-full text-left p-5 sm:p-6 flex justify-between items-start gap-4 hover:bg-gray-50 transition" onclick="toggleFAQ(this)">
+                  <span class="text-base sm:text-lg font-semibold text-gray-800 pr-4">Quanto tempo dura o preenchimento labial?</span>
+                  <svg class="faq-icon w-5 h-5 sm:w-6 sm:h-6 rose-gold flex-shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </button>
+                <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+                  <div class="p-5 sm:p-6 pt-0 text-gray-600 text-sm sm:text-base leading-relaxed">
+                    O preenchimento com ácido hialurônico dura em média 8 a 12 meses, podendo variar conforme o metabolismo de cada pessoa e os cuidados pós-procedimento. Após esse período, o produto é naturalmente absorvido pelo organismo e uma nova aplicação pode ser feita se desejado.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Pergunta 4 -->
+              <div class="faq-item bg-white elegant-border rounded-xl overflow-hidden">
+                <button class="faq-question w-full text-left p-5 sm:p-6 flex justify-between items-start gap-4 hover:bg-gray-50 transition" onclick="toggleFAQ(this)">
+                  <span class="text-base sm:text-lg font-semibold text-gray-800 pr-4">O resultado fica natural ou artificial?</span>
+                  <svg class="faq-icon w-5 h-5 sm:w-6 sm:h-6 rose-gold flex-shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </button>
+                <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+                  <div class="p-5 sm:p-6 pt-0 text-gray-600 text-sm sm:text-base leading-relaxed">
+                    O resultado depende da técnica utilizada e da quantidade de produto aplicado. Com uma aplicação adequada, é possível ter lábios naturalmente volumosos e bem desenhados. O ideal é buscar um resultado harmonioso com as proporções do rosto, evitando exageros.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Pergunta 5 -->
+              <div class="faq-item bg-white elegant-border rounded-xl overflow-hidden">
+                <button class="faq-question w-full text-left p-5 sm:p-6 flex justify-between items-start gap-4 hover:bg-gray-50 transition" onclick="toggleFAQ(this)">
+                  <span class="text-base sm:text-lg font-semibold text-gray-800 pr-4">O lábio fica duro após o preenchimento?</span>
+                  <svg class="faq-icon w-5 h-5 sm:w-6 sm:h-6 rose-gold flex-shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </button>
+                <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+                  <div class="p-5 sm:p-6 pt-0 text-gray-600 text-sm sm:text-base leading-relaxed">
+                    Não. Quando o ácido hialurônico é bem aplicado, os lábios ficam macios e com movimento natural. Logo após o procedimento pode haver um leve inchaço que desaparece em poucos dias. O produto se integra aos tecidos proporcionando um resultado suave ao toque.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Pergunta 6 -->
+              <div class="faq-item bg-white elegant-border rounded-xl overflow-hidden">
+                <button class="faq-question w-full text-left p-5 sm:p-6 flex justify-between items-start gap-4 hover:bg-gray-50 transition" onclick="toggleFAQ(this)">
+                  <span class="text-base sm:text-lg font-semibold text-gray-800 pr-4">Dói fazer preenchimento labial?</span>
+                  <svg class="faq-icon w-5 h-5 sm:w-6 sm:h-6 rose-gold flex-shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </button>
+                <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+                  <div class="p-5 sm:p-6 pt-0 text-gray-600 text-sm sm:text-base leading-relaxed">
+                    O procedimento pode causar algum desconforto, mas é tolerável. É aplicada anestesia tópica ou pomada anestésica antes da aplicação para minimizar o incômodo. Muitos ácidos hialurônicos já vêm com anestésico na fórmula. O procedimento dura cerca de 30 a 40 minutos.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Pergunta 7 -->
+              <div class="faq-item bg-white elegant-border rounded-xl overflow-hidden">
+                <button class="faq-question w-full text-left p-5 sm:p-6 flex justify-between items-start gap-4 hover:bg-gray-50 transition" onclick="toggleFAQ(this)">
+                  <span class="text-base sm:text-lg font-semibold text-gray-800 pr-4">Quais os cuidados após o preenchimento labial?</span>
+                  <svg class="faq-icon w-5 h-5 sm:w-6 sm:h-6 rose-gold flex-shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </button>
+                <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+                  <div class="p-5 sm:p-6 pt-0 text-gray-600 text-sm sm:text-base leading-relaxed">
+                    Nas primeiras 24 a 48 horas, evite: exercícios físicos intensos, exposição ao sol e calor excessivo, bebidas alcoólicas e manipulação excessiva dos lábios. Pode ocorrer leve inchaço ou pequenos hematomas que desaparecem em poucos dias. Gelo pode ser aplicado para reduzir o inchaço.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Pergunta 8 -->
+              <div class="faq-item bg-white elegant-border rounded-xl overflow-hidden">
+                <button class="faq-question w-full text-left p-5 sm:p-6 flex justify-between items-start gap-4 hover:bg-gray-50 transition" onclick="toggleFAQ(this)">
+                  <span class="text-base sm:text-lg font-semibold text-gray-800 pr-4">Posso reverter o preenchimento se não gostar?</span>
+                  <svg class="faq-icon w-5 h-5 sm:w-6 sm:h-6 rose-gold flex-shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </button>
+                <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+                  <div class="p-5 sm:p-6 pt-0 text-gray-600 text-sm sm:text-base leading-relaxed">
+                    Sim! Uma das vantagens do ácido hialurônico é que ele pode ser dissolvido com uma enzima chamada hialuronidase. Se por algum motivo você não ficar satisfeita com o resultado, é possível reverter total ou parcialmente o preenchimento de forma segura e rápida.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CTA Final -->
+          <div class="text-center mt-12 sm:mt-16 elegant-border rounded-2xl p-8 sm:p-10 bg-white">
+            <h3 class="text-2xl sm:text-3xl font-semibold text-gray-800 mb-4">
+              Ainda tem dúvidas?
+            </h3>
+            <p class="text-gray-600 mb-6 sm:mb-8 text-base sm:text-lg">
+              Estamos prontas para esclarecer todas as suas questões e ajudá-la a escolher o melhor tratamento.
+            </p>
+            <a
+              href="https://wa.me/5511976713350?text=Olá! Gostaria de tirar dúvidas sobre os procedimentos."
+              class="inline-block rose-gold-bg text-white px-8 sm:px-12 py-3 sm:py-4 rounded-full hover-rose transition text-base sm:text-lg"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Fale Conosco pelo WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Contato -->
     <section
       id="contato"
@@ -816,6 +1129,136 @@
     }
     </script>
 
+    <!-- Schema.org FAQPage para SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "O que é Botox e para que serve?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O Botox (toxina botulínica) é um tratamento estético que relaxa temporariamente os músculos faciais, suavizando rugas e linhas de expressão. É especialmente eficaz para tratar rugas na testa, entre as sobrancelhas (glabela), ao redor dos olhos (pés de galinha) e para sorriso gengival."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quanto custa o tratamento com Botox?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O valor do Botox varia conforme a área tratada e a quantidade de unidades necessárias. Em média, o investimento fica entre R$ 800 e R$ 2.500 por sessão. Durante a consulta, é feita uma avaliação personalizada para determinar o valor exato do seu tratamento."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quanto tempo dura o efeito do Botox?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O efeito do Botox dura em média 4 a 6 meses. Após esse período, o movimento muscular retorna gradualmente e uma nova aplicação pode ser necessária para manter os resultados. Com aplicações regulares, muitos pacientes relatam que o efeito pode durar um pouco mais."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A aplicação de Botox dói?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A aplicação é feita com agulhas muito finas e o desconforto é mínimo, descrito pela maioria dos pacientes como uma leve picada ou pressão. O procedimento dura cerca de 10 a 20 minutos e não requer anestesia. Se necessário, pode ser aplicado um creme anestésico antes do procedimento."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quando vejo os resultados do Botox?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Os primeiros resultados aparecem entre 3 a 5 dias após a aplicação, mas o efeito completo é visível em 14 dias. É importante não deitar ou fazer exercícios físicos intensos nas primeiras 4 horas após o procedimento."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quais são as contraindicações do Botox?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O Botox é contraindicado para gestantes, lactantes, pessoas com doenças neuromusculares (como miastenia gravis) e alergia a algum componente da fórmula. Durante a consulta, é feita uma avaliação completa do seu histórico de saúde para garantir a segurança do procedimento."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Botox deixa o rosto congelado ou artificial?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Quando aplicado corretamente por um profissional qualificado, o Botox proporciona resultados naturais. O objetivo é suavizar as linhas de expressão mantendo a capacidade de expressão facial. O aspecto congelado geralmente ocorre quando há excesso na aplicação."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O que é preenchimento labial e como funciona?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O preenchimento labial é um procedimento estético que utiliza ácido hialurônico para aumentar o volume dos lábios, melhorar o contorno e reduzir linhas finas ao redor da boca. O ácido hialurônico é uma substância naturalmente presente no corpo, o que torna o procedimento seguro e com baixo risco de rejeição."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quanto custa o preenchimento labial?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O valor do preenchimento labial varia conforme a quantidade de produto utilizado e o resultado desejado. O investimento geralmente fica entre R$ 1.500 e R$ 3.500 por aplicação. O preço final é definido após avaliação individual na consulta."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quanto tempo dura o preenchimento labial?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O preenchimento com ácido hialurônico dura em média 8 a 12 meses, podendo variar conforme o metabolismo de cada pessoa e os cuidados pós-procedimento. Após esse período, o produto é naturalmente absorvido pelo organismo e uma nova aplicação pode ser feita se desejado."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O resultado do preenchimento labial fica natural ou artificial?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O resultado depende da técnica utilizada e da quantidade de produto aplicado. Com uma aplicação adequada, é possível ter lábios naturalmente volumosos e bem desenhados. O ideal é buscar um resultado harmonioso com as proporções do rosto, evitando exageros."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O lábio fica duro após o preenchimento?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não. Quando o ácido hialurônico é bem aplicado, os lábios ficam macios e com movimento natural. Logo após o procedimento pode haver um leve inchaço que desaparece em poucos dias. O produto se integra aos tecidos proporcionando um resultado suave ao toque."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Dói fazer preenchimento labial?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O procedimento pode causar algum desconforto, mas é tolerável. É aplicada anestesia tópica ou pomada anestésica antes da aplicação para minimizar o incômodo. Muitos ácidos hialurônicos já vêm com anestésico na fórmula. O procedimento dura cerca de 30 a 40 minutos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quais os cuidados após o preenchimento labial?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nas primeiras 24 a 48 horas, evite: exercícios físicos intensos, exposição ao sol e calor excessivo, bebidas alcoólicas e manipulação excessiva dos lábios. Pode ocorrer leve inchaço ou pequenos hematomas que desaparecem em poucos dias. Gelo pode ser aplicado para reduzir o inchaço."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Posso reverter o preenchimento labial se não gostar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim! Uma das vantagens do ácido hialurônico é que ele pode ser dissolvido com uma enzima chamada hialuronidase. Se por algum motivo você não ficar satisfeita com o resultado, é possível reverter total ou parcialmente o preenchimento de forma segura e rápida."
+          }
+        }
+      ]
+    }
+    </script>
+
     <script>
       // Configuração centralizada do WhatsApp
       const WHATSAPP_CONFIG = {
@@ -840,6 +1283,31 @@
       function toggleMenu() {
         const menu = document.getElementById("mobileMenu");
         menu.classList.toggle("hidden");
+      }
+
+      // Função para controlar accordion do FAQ
+      function toggleFAQ(button) {
+        const faqItem = button.closest('.faq-item');
+        const answer = faqItem.querySelector('.faq-answer');
+        const icon = button.querySelector('.faq-icon');
+        const isOpen = answer.style.maxHeight && answer.style.maxHeight !== '0px';
+
+        // Fecha todos os outros FAQs (opcional - remove para permitir múltiplos abertos)
+        // document.querySelectorAll('.faq-answer').forEach(item => {
+        //   if (item !== answer) {
+        //     item.style.maxHeight = '0';
+        //     item.closest('.faq-item').querySelector('.faq-icon').style.transform = 'rotate(0deg)';
+        //   }
+        // });
+
+        // Toggle do FAQ atual
+        if (isOpen) {
+          answer.style.maxHeight = '0';
+          icon.style.transform = 'rotate(0deg)';
+        } else {
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+          icon.style.transform = 'rotate(180deg)';
+        }
       }
 
       // Inicializa quando a página carregar
